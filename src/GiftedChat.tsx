@@ -7,7 +7,7 @@ import {
   View,
   StyleProp,
   ViewStyle,
-  SafeAreaView,
+//   SafeAreaView,
   FlatList,
   TextStyle,
   KeyboardAvoidingView,
@@ -47,6 +47,7 @@ import {
 } from './Constant'
 import { IMessage, User, Reply, LeftRightStyle } from './types'
 import QuickReplies from './QuickReplies'
+import SafeAreaView from 'react-native-safe-area-view';
 
 // const GiftedActionSheet = ActionSheet as any
 
@@ -829,7 +830,7 @@ class GiftedChat<TMessage extends IMessage = IMessage> extends React.Component<
   render() {
     if (this.state.isInitialized === true) {
       return (
-        <SafeAreaView style={styles.safeArea}>
+        <SafeAreaView style={styles.safeArea} forceInset={{ top: 'never' }}>
           <ActionSheetProvider
             ref={(component: any) => (this._actionSheetRef = component)}
           >
